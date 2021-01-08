@@ -1,2 +1,2 @@
 # PortKnocking
-Simple server implementing client authorization usin port knocking protocol.
+Simple client authorization using port knocking protocol.
