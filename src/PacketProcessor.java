@@ -7,6 +7,7 @@ public class PacketProcessor implements Runnable {
     private DatagramPort datagramPort;
 
     public PacketProcessor(Authorization authorization, Queue<Integer> sequence, DatagramPort port) {
+
         this.authorization = authorization;
         this.sequence = sequence;
         this.datagramPort= port;
@@ -39,7 +40,7 @@ public class PacketProcessor implements Runnable {
         if (client.getState() == ClientState.AUTHORIZED) {
             System.out.println("Authorization granted");
             authorization.setAuthorizedClient(client);
-
+            removeFromMap(hash);
         }
     }
 
@@ -64,4 +65,6 @@ public class PacketProcessor implements Runnable {
     private int hashCode(DatagramPort port){
        return  (port.getPacket().getAddress().toString() + "/" + port.getPacket().getPort()).hashCode();
     }
+
+
 }

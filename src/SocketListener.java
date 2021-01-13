@@ -8,9 +8,6 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class SocketListener implements Runnable {
-    static BlockingQueue<DatagramPort> packetQueue = new LinkedBlockingQueue<>();
-
-
     private DatagramSocket socket;
     private final int PORT_NUMBER;
     private Authorization authorization;
