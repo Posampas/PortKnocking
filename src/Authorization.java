@@ -14,6 +14,7 @@ public class Authorization {
     private Server server;
 
 
+
     public Authorization(int[] portNumbers, Server server) throws SocketException {
         this.server =server;
         constructSequence(portNumbers);
@@ -41,7 +42,5 @@ public class Authorization {
     void processDatagram(DatagramPort data){
        packetProcessors.submit( new PacketProcessor(this,sequence,data));
     }
-
-
 
 }

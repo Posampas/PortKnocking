@@ -33,7 +33,7 @@ public class Client {
         return state;
     }
 
-    public void moveSequence(int socketPortNumber) {
+    public  void moveSequence(int socketPortNumber) {
 
         if (state != ClientState.UNAUTHORIZED) {
             return;
